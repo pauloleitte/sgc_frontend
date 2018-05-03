@@ -1,0 +1,10 @@
+<content-header name= "Dashboard" small="Versão 1.0"> </content-header>
+
+<section class="content" ng-controller="DashboardCtrl as dashboard">
+   <value-box grid="4" color-class="bg-green" icon-class="fa fa-institution"
+     value="{{ dashboard.one }}"text="Total de Congregações"></value-box>
+   <value-box grid="4" color-class="bg-red" icon-class="fa fa-user"
+     value="{{ dashboard.two }}" text="Total de Membros"></value-box>
+     <value-box grid="4" color-class="bg-blue" icon-class="fa fa-calendar-plus-o"
+     value="{{ dashboard.three }}" text="Total de Eventos"></value-box>
+</section>

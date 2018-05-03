@@ -1,0 +1,253 @@
+<div class="box box-info">
+  <div class = "box-header with-border">
+<h3 class= "box-title">Dados Membro</h3>
+<div class="box-tool pull-right">
+  <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+    <i class="fa fa-minus"></i>
+  </button>
+</div>
+</div>
+  <div class="box-body">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class = "input-group">
+          <div class="input-group-addon">
+            <i class= "fa fa-user"></i>
+          </div>
+          <input class="form-control" placeholder="Informe o Nome"
+             type="text" ng-model=cgCtrl.Membro.nome ng-readonly="cgCtrl.tabDelete"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class = "input-group">
+          <div class="input-group-addon">
+            <i class= "fa fa-envelope"></i>
+          </div>
+          <input class="form-control" placeholder="Informe o Email"
+             type="text" ng-model=cgCtrl.Membro.email ng-readonly="cgCtrl.tabDelete"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class = "input-group">
+          <div class="input-group-addon">
+            <i class= "fa fa-phone"></i>
+          </div>
+          <input class="form-control" placeholder="Informe o telefone" mask="(99) 9?9999-9999"
+              type="text" ng-model=cgCtrl.Membro.telefone ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class = "input-group">
+          <div class="input-group-addon">
+            <i class= "fa fa-venus-mars"></i>
+          </div>
+          <select class="form-control" data-toggle="tooltip"
+          data-original-title="Informe o Sexo" ng-model="cgCtrl.Membro.sexo" ng-disabled="cgCtrl.tabDelete"  ng-options="sexo for sexo in cgCtrl.listaDeSexos" >
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class = "input-group">
+          <div class="input-group-addon">
+            <i class= "fa fa-group"></i>
+          </div>
+        <select class="form-control" data-toggle="tooltip"
+          data-original-title="Informe o Estado Civil" ng-model="cgCtrl.Membro.estado_civil"  ng-options="civil for civil in cgCtrl.listaDeEstadoCivis"
+          ng-disabled="cgCtrl.tabDelete">
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class = "input-group">
+          <div class="input-group-addon">
+            <i class= "fa fa-wrench"></i>
+          </div>
+          <select class="form-control" data-toggle="tooltip"
+          data-original-title="Informe o Cargo" ng-model="cgCtrl.Membro.tipo" ng-options="tipo for tipo in cgCtrl.listaDeTipos"
+          ng-disabled="cgCtrl.tabDelete">
+          </select>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <div class="input-group date">
+            <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+            </div>
+            <input class="form-control pull-right" placeholder="Informe a Data de Nascimento" mask="99/99/9999"
+            type="text" ng-model=cgCtrl.Membro.dataNascimento ng-readonly="cgCtrl.tabDelete"/>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+    <div class="box box-info">
+      <div class = "box-header with-border">
+    <h3 class= "box-title">Endereço</h3>
+    <div class="box-tool pull-right">
+      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+    </div>
+      <div class="box-body">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <div class = "input-group">
+                  <div class="input-group-addon">
+                    <i class= "fa fa-street-view"></i>
+                  </div>
+                  <input id="cep" class="form-control" placeholder="Informe o CEP" mask="99999-999"
+                   type="text" ng-model=cgCtrl.Membro.cep ng-readonly="cgCtrl.tabDelete" ng-blur="cgCtrl.getCep(cgCtrl.Membro.cep)"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12">
+              <div class="form-group">
+                <div class = "input-group">
+                  <div class="input-group-addon">
+                    <i class= "fa fa-road"></i>
+                  </div>
+                  <input id="rua" class="form-control" placeholder="Informe a Rua"
+                     type="text" ng-model=cgCtrl.Membro.rua ng-readonly="cgCtrl.tabDelete"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <div class = "input-group">
+                  <div class="input-group-addon">
+                    <i class= "fa fa-sheqel"></i>
+                  </div>
+                  <input id="numero" class="form-control" placeholder="Informe o número"
+                     type="text" ng-model=cgCtrl.Membro.numero ng-readonly="cgCtrl.tabDelete"/>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class = "input-group">
+                  <div class="input-group-addon">
+                    <i class= "fa fa-sheqel"></i>
+                  </div>
+                  <input id="complemento" class="form-control" placeholder="Informe o complemento"
+                     type="text" ng-model=cgCtrl.Membro.complemento ng-readonly="cgCtrl.tabDelete"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="form-group">
+                <div class = "input-group">
+                  <div class="input-group-addon">
+                    <i class= "fa fa-th-large"></i>
+                  </div>
+                  <input id="bairro" class="form-control" placeholder="Informe o bairro"
+                     type="text" ng-model=cgCtrl.Membro.bairro ng-readonly="cgCtrl.tabDelete"/>
+                </div>
+              </div>
+            </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="form-group">
+            <div class = "input-group">
+              <div class="input-group-addon">
+                <i class= "fa fa-map-o"></i>
+              </div>
+              <input id="cidade" class="form-control" placeholder="Informe a cidade"
+                 type="text" ng-model=cgCtrl.Membro.cidade ng-readonly="cgCtrl.tabDelete"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="form-group">
+            <div class = "input-group">
+              <div class="input-group-addon">
+                <i class= "fa fa-map-o"></i>
+              </div>
+              <input id="estado" class="form-control" placeholder="Informe o estado"
+                 type="text" ng-model=cgCtrl.Membro.estado ng-readonly="cgCtrl.tabDelete"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box box-info"> 
+          <div class = "box-header with-border">
+    <h3 class= "box-title">Total de Dizimos</h3>
+    <div class="box-tool pull-right">
+      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+    </div>
+    
+    <div class ="box-body">
+         <div class="col-xs-12">
+      <fieldset>
+        <div ng-include="'Membro/Summary.html'"></div>
+      </fieldset>
+    </div>
+    </div> 
+    </div>
+
+
+        <div class="box box-info">
+      <div class = "box-header with-border">
+    <h3 class= "box-title">Dizimos</h3>
+    <div class="box-tool pull-right">
+      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+    </div>
+     <div class="box-body">
+     <div class="col-xs-12">
+      <fieldset>
+        <div ng-include="'Membro/dizimosList.html'"></div>
+      </fieldset>
+    </div>
+     </div>
+</div>
+
+  
+
+
+
+<div class="box-footer">
+  <button class = "btn btn-primary" ng-click="cgCtrl.create()"
+  ng-if="cgCtrl.tabCreate">Incluir</button>
+  <button class = "btn btn-info"
+  ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
+  <button class = "btn btn-danger"
+  ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
+  <button class = "btn btn-dafault" ng-click="cgCtrl.refresh()">Cancelar</button>
+</div>

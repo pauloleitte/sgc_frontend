@@ -1,0 +1,39 @@
+<div class="col-md-4">
+    <div class="form-group">
+        <div class = "input-group">
+          <div class="input-group-addon">
+            <i class= "fa fa-search"></i>
+          </div>
+          <input id="search_nome" class="form-control" placeholder="Buscar"
+             type="text" ng-model=searchText ng-readonly="cgCtrl.tabDelete"/>
+        </div>
+      </div>
+ </div>
+<div class="box-body">
+  <table class = "table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Ministerio</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="Congregacao in cgCtrl.Congregacaos | filter:{ nome:searchText }">
+        <td>{{ Congregacao.nome }}</td>
+        <td>{{ Congregacao.ministerio }}</td>
+        <td>{{ Congregacao.telefone }}</td>
+        <td class = "table-actions">
+          <button class="btn btn-warning" ng-click="cgCtrl.showTabUpdate(Congregacao)">
+            <i class= "fa fa-pencil"></i></button>
+          <button class="btn btn-danger" ng-click="cgCtrl.showTabDelete(Congregacao)">
+            <i class= "fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="box-footer clearfix">
+  <paginator url="/#!/Congregacao" pages="{{ cgCtrl.pages }}"></paginator>
+</div>
