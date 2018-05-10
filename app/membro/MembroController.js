@@ -10,7 +10,7 @@
   function membroController($http, $location, msgs, tabs, $filter) {
     const vm = this
     const url = 'http://localhost:5000/api/membro'
-	const url_heroku = 'https://morning-lowlands-15369.herokuapp.com/api/membro'
+	const url_heroku = 'https://sgc-backend.herokuapp.com/api/membro'
 
     vm.listaDeSexos = ["Masculino", "Feminino"]
 
@@ -111,7 +111,7 @@
 
       var result = cep
       result = result.replace("-", "");
-      const viacep = "http://viacep.com.br/ws/" + result + "/json/"
+      const viacep = "https://viacep.com.br/ws/" + result + "/json/"
 
       $http.get(viacep).then(function (response) {
 

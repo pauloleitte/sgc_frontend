@@ -9,8 +9,8 @@
   function eventoController($http, msgs, tabs, $location) {
     const vm = this
     const url = 'http://localhost:5000/api/evento'
-	const url_heroku = 'https://morning-lowlands-15369.herokuapp.com/api/evento'
-	const url_heroku_congregacao = 'https://morning-lowlands-15369.herokuapp.com/api/congregacao'
+	const url_heroku = 'https://sgc-backend.herokuapp.com/api/evento'
+	const url_heroku_congregacao = 'https://sgc-backend.herokuapp.com/api/congregacao'
 
 
     vm.listaDeSexos = ["Masculino", "Feminino"]

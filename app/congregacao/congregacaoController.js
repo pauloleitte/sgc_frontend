@@ -9,7 +9,7 @@
   function congregacaoController($http, msgs, tabs, $location) {
     const vm = this
     const url = 'http://localhost:5000/api/congregacao'
-	const url_heroku = 'https://morning-lowlands-15369.herokuapp.com/api/congregacao'
+  const url_heroku = 'https://sgc-backend.herokuapp.com/api/congregacao'
     vm.refresh = function () {
       const page = parseInt($location.search().page) || 1
       const url_page = `${url_heroku}?skip=${(page - 1) * 10}&limit=10`
@@ -28,7 +28,7 @@
       var result = cep
       result = result.replace("-", "");
       console.log(result)
-      const viacep = "http://viacep.com.br/ws/" + result + "/json/"
+      const viacep = "https://viacep.com.br/ws/" + result + "/json/"
 
       $http.get(viacep).then(function (response) {
 

@@ -9,7 +9,7 @@
   function departamentoController($http, msgs, tabs, $location) {
     const vm = this
     const url = 'http://localhost:5000/api/departamento'
-	const url_heroku = 'https://morning-lowlands-15369.herokuapp.com/api/departamento'
+	const url_heroku = 'https://sgc-backend.herokuapp.com/api/departamento'
 
     vm.refresh = function () {
       const page = parseInt($location.search().page) || 1

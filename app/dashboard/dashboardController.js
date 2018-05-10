@@ -11,7 +11,7 @@ function DashboardController($http)
   {
 
     const url = 'http://localhost:5000/api/congregacao/count'
-    const url_heroku = 'https://morning-lowlands-15369.herokuapp.com/api/congregacao/count'
+    const url_heroku = 'https://sgc-backend.herokuapp.com/api/congregacao/count'
     $http.get(url_heroku).then(function(response)
     {
         const value = response.data.value
@@ -20,7 +20,7 @@ function DashboardController($http)
   }
   vm.getdashboardMembro = function()
   {
-    const url = 'https://morning-lowlands-15369.herokuapp.com/api/membro/count'
+    const url = 'https://sgc-backend.herokuapp.com/api/membro/count'
     $http.get(url).then(function(response)
     {
         const value = response.data.value
@@ -29,7 +29,7 @@ function DashboardController($http)
   }
 
   vm.getdashboardEvento = function(){
-    const url = 'https://morning-lowlands-15369.herokuapp.com/api/evento/count'
+    const url = 'https://sgc-backend.herokuapp.com/api/evento/count'
     $http.get(url).then(function(response)
     {
         const value = response.data.value
