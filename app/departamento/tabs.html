@@ -30,13 +30,13 @@
 
       </ul>
       <div class="tab-content">
-        <div class="tab-pane" id="tabList" ng-include="'Departamento/list.html'"
+        <div class="tab-pane" id="tabList" ng-include="'departamento/list.html'"
          ng-class="{active: cgCtrl.tabList}" ng-if="cgCtrl.tabList"> </div>
-        <div class="tab-pane" id="tabCreate" ng-include="'Departamento/form.html'"
+        <div class="tab-pane" id="tabCreate" ng-include="'departamento/form.html'"
          ng-if="cgCtrl.tabCreate"> </div>
-        <div class="tab-pane" id="tabUpdate" ng-include="'Departamento/form.html'"
+        <div class="tab-pane" id="tabUpdate" ng-include="'departamento/form.html'"
         ng-class="{active: cgCtrl.tabUpdate}" ng-if="cgCtrl.tabUpdate"> </div>
-        <div class="tab-pane" id="tabDelete" ng-include="'Departamento/form.html'"
+        <div class="tab-pane" id="tabDelete" ng-include="'departamento/form.html'"
         ng-class="{active: cgCtrl.tabDelete}" ng-if="cgCtrl.tabDelete"> </div>
       </div>
     </div>

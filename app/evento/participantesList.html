@@ -1,3 +1,14 @@
+<div class="col-md-4">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-search"></i>
+      </div>
+      <input id="search_nome" class="form-control" placeholder="Buscar" type="text" ng-model=searchText ng-readonly="cgCtrl.tabDelete"
+      />
+    </div>
+  </div>
+</div>
 <div class = "col-xs-12">
     <table class="table">
    <thead>
@@ -5,7 +16,7 @@
      </tr>
    </thead>
    <tbody>
-     <tr ng-repeat="partipante in cgCtrl.Evento.participantes">
+     <tr ng-repeat="partipante in cgCtrl.Evento.participantes | filter:{ nome:searchText }">
        <td>
          <div class = "col-xs-12"> 
                 <div class = "input-group">

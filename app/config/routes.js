@@ -8,19 +8,19 @@ angular.module('SGC').config([
       templateUrl: "dashboard/dashboard.html"
     }).state('congregacao', {
       url: "/Congregacao?page",
-      templateUrl: "Congregacao/tabs.html"
+      templateUrl: "congregacao/tabs.html"
     }).state('membro',{
       url: "/Membro?page",
-      templateUrl: "Membro/tabs.html"
+      templateUrl: "membro/tabs.html"
     }).state('departamento',{
       url: "/Departamento?page",
-      templateUrl: "Departamento/tabs.html"
+      templateUrl: "departamento/tabs.html"
     }).state('auth',{
       url: "/Auth",
       templateUrl: "/auth.html"
     }).state('evento',{
       url: "/Evento?page",
-      templateUrl: "Evento/tabs.html"
+      templateUrl: "evento/tabs.html"
     })
     $httpProvider.interceptors.push('handleResponseError')
 }]).run([
