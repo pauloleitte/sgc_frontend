@@ -41,7 +41,9 @@
     "run-sequence": "2.2.0"
   },
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "angular-input-masks": "^4.0.0",
+    "chart.js": "^2.7.2",
     "express": "^4.16.3",
     "http-server": "0.10.0",
     "ng-mask": "^3.1.1",

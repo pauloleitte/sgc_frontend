@@ -1,43 +1,50 @@
-angular.module('SGC').controller('DashboardCtrl', [
-  '$http',
-  DashboardController
-])
+angular
+  .module("SGC")
+  .controller("DashboardCtrl", ["$http", DashboardController]);
 
-function DashboardController($http)
-{
-  const vm = this
-  const value = 0
-  vm.getdashboardCongregacao = function()
-  {
+function DashboardController($http) {
+  const vm = this;
+   vm.valor1 = 50;
+   vm.valor2 = 50;
+   vm.valor3 = 50;
 
-    const url = 'http://localhost:5000/api/congregacao/count'
-    const url_heroku = 'https://sgc-backend.herokuapp.com/api/congregacao/count'
-    $http.get(url_heroku).then(function(response)
-    {
-        const value = response.data.value
-        vm.one = value
-    })
-  }
-  vm.getdashboardMembro = function()
-  {
-    const url = 'https://sgc-backend.herokuapp.com/api/membro/count'
-    $http.get(url).then(function(response)
-    {
-        const value = response.data.value
-        vm.two = value
-    })
-  }
+  vm.getdashboardCongregacao = function() {
+    const url_heroku =
+      "https://sgc-backend.herokuapp.com/api/congregacao/count";
+    $http.get(url_heroku).then(function(response) {
+      var valor = response.data.value;
+      vm.congregacao = valor;
+    });
+  };
+  vm.getdashboardMembro = function() {
+    const url = "https://sgc-backend.herokuapp.com/api/membro/count";
+    $http.get(url).then(function(response) {
+      var valor = response.data.value;
+      vm.membro = valor;
+    });
+  };
 
-  vm.getdashboardEvento = function(){
-    const url = 'https://sgc-backend.herokuapp.com/api/evento/count'
-    $http.get(url).then(function(response)
-    {
-        const value = response.data.value
-        vm.three = value
-    })
-  }
-  vm.getdashboardCongregacao()
-  vm.getdashboardMembro()
-  vm.getdashboardEvento()
+  vm.getdashboardEvento = function() {
+    const url = "https://sgc-backend.herokuapp.com/api/evento/count";
+    $http.get(url).then(function(response) {
+      var valor = response.data.value;
+      vm.evento = valor;
+    });
+  };
 
+  vm.getdashboardDizimo = function() {
+    const url = "https://sgc-backend.herokuapp.com/api/MembroSummary";
+    $http.get(url).then(function(response) {
+      var valor = response.data.dizimo;
+      vm.dizimo = valor;
+    });
+  };
+
+  vm.getdashboardCongregacao();
+  vm.getdashboardMembro();
+  vm.getdashboardEvento();
+  vm.getdashboardDizimo();
+  vm.labels = ["Membros", "Congregações", "Eventos"];
+  vm.data = [vm.valor1, vm.valor2, vm.valor3];
+  vm.colors = ["#d33724", "#00c0ef", "#f39c12 "];
 }

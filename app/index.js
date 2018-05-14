@@ -3,4 +3,5 @@ angular.module('SGC',[
   'ngAnimate',
   'toastr',
   'ngMask',
+  'chart.js'
 ])

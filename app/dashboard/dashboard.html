@@ -1,10 +1,119 @@
-<content-header name= "Dashboard" small="Versão 1.0"> </content-header>
-
+<content-header name="Dashboard" small="Versão 1.0"> </content-header>
 <section class="content" ng-controller="DashboardCtrl as dashboard">
-   <value-box grid="4" color-class="bg-green" icon-class="fa fa-institution"
-     value="{{ dashboard.one }}"text="Total de Congregações"></value-box>
-   <value-box grid="4" color-class="bg-red" icon-class="fa fa-user"
-     value="{{ dashboard.two }}" text="Total de Membros"></value-box>
-     <value-box grid="4" color-class="bg-blue" icon-class="fa fa-calendar-plus-o"
-     value="{{ dashboard.three }}" text="Total de Eventos"></value-box>
+  <div class="col-xs-12">
+    <div class="info-box bg-green">
+      <span class="info-box-icon">
+        <i class="fa fa-dollar"></i>
+      </span>
+      <div class="info-box-content">
+        <span class="info-box-text">Total de Dizimos</span>
+        <span class="info-box-number">R$ {{dashboard.dizimo | number:2}}</span>
+        <div class="progress">
+          <div class="progress-bar" style="width: 50%"></div>
+        </div>
+        <span class="progress-description">
+          50% em 30 Dias.
+        </span>
+      </div>
+    </div>
+  </div>
+  <value-box grid="4" color-class="bg-aqua" icon-class="fa fa-institution" value="{{ dashboard.congregacao }}" text="Congregações"></value-box>
+  <value-box grid="4" color-class="bg-red" icon-class="fa fa-user" value="{{ dashboard.membro }}" text="Membros"></value-box>
+  <value-box grid="4" color-class="bg-yellow" icon-class="fa fa-calendar-plus-o" value="{{ dashboard.evento }}" text="Eventos"></value-box>
+</section>
+<section class="content" ng-controller="DashboardCtrl as dashboard">
+  <div class="col-md-4">
+    <div class="box box-default">
+      <div class="box-header with-border">
+        <h3 class="box-title">Congregações</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="chart-responsive">
+              <canvas id="doughnut" class="chart chart-doughnut" chart-data="dashboard.data" chart-labels="dashboard.labels" height="202"
+                width="303" style="width: 243px; height: 162px;" chart-colors="dashboard.colors"></canvas>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <ul class="chart-legend clearfix">
+              <li>
+                <i class="fa fa-circle-o text-red"></i> Madureira</li>
+              <li>
+                <i class="fa fa-circle-o text-aqua"></i> Belém</li>
+              <li>
+                <i class="fa fa-circle-o text-yellow"></i> Brás</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Membros</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+              <i class="fa fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="chart-responsive">
+                <canvas id="doughnut" class="chart chart-doughnut" chart-data="dashboard.data" chart-labels="dashboard.labels" height="202"
+                  width="303" style="width: 243px; height: 162px;" chart-colors="dashboard.colors"></canvas>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <ul class="chart-legend clearfix">
+                <li>
+                  <i class="fa fa-circle-o text-red"></i> Visitante</li>
+                <li>
+                  <i class="fa fa-circle-o text-aqua"></i> Membros</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="box box-default">
+          <div class="box-header with-border">
+            <h3 class="box-title">Eventos</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                <i class="fa fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="chart-responsive">
+                  <canvas id="doughnut" class="chart chart-doughnut" chart-data="dashboard.data" chart-labels="dashboard.labels" height="202"
+                    width="303" style="width: 243px; height: 162px;" chart-colors="dashboard.colors"></canvas>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <ul class="chart-legend clearfix">
+                  <li>
+                    <i class="fa fa-circle-o text-red"></i> Congresso</li>
+                  <li>
+                    <i class="fa fa-circle-o text-aqua"></i> Culto</li>
+                  <li>
+                    <i class="fa fa-circle-o text-yellow"></i> Oração</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </section>
