@@ -14,26 +14,26 @@
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Cargo</th>
+        <th>Tipo</th>
         <th>Telefone</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="Membro in cgCtrl.Membros  | filter:{ nome:searchText } ">
-        <td>{{ Membro.nome }}</td>
-        <td>{{ Membro.tipo }}</td>
-        <td>{{ Membro.telefone }}</td>
+      <tr ng-repeat="Pessoa in cgCtrl.Pessoas  | filter:{ nome:searchText } ">
+        <td>{{ Pessoa.nome }}</td>
+        <td>{{ Pessoa.tipo }}</td>
+        <td>{{ Pessoa.telefone }}</td>
         <td class = "table-actions">
-          <button class="btn btn-warning" ng-click="cgCtrl.showTabUpdate(Membro)">
+          <button class="btn btn-warning" ng-click="cgCtrl.showTabUpdate(Pessoa)">
             <i class= "fa fa-pencil"></i></button>
-          <button class="btn btn-danger" ng-click="cgCtrl.showTabDelete(Membro)">
+          <button class="btn btn-danger" ng-click="cgCtrl.showTabDelete(Pessoa)">
             <i class= "fa fa-trash-o"></i></button>
         </td>
       </tr>
     </tbody>
   </table>
   <div class="box-footer clearfix">
-      <paginator url="/#!/Membro" pages="{{ cgCtrl.pages }}"></paginator>
+      <paginator url="/#!/Pessoa" pages="{{ cgCtrl.pages }}"></paginator>
     </div>
 </div>

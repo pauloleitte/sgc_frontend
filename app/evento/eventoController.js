@@ -9,13 +9,13 @@
   function eventoController($http, msgs, tabs, $location) {
     const vm = this
     const url = 'http://localhost:5000/api/evento'
-	const url_heroku = 'https://sgc-backend.herokuapp.com/api/evento'
-	const url_heroku_congregacao = 'https://sgc-backend.herokuapp.com/api/congregacao'
+	  const url_heroku = 'https://sgc-backend.herokuapp.com/api/evento'
+	  const url_heroku_congregacao = 'https://sgc-backend.herokuapp.com/api/congregacao'
 
 
     vm.listaDeSexos = ["Masculino", "Feminino"]
 
-    vm.listaDeTipos = ["Congresso", "Culto Com as Irmãs", "Culto com os Jovens", "Culto com as Criaças", "Santa Ceia"]
+    vm.listaDeTipos = ["Congresso", "Culto", "Oração", "Consagração", "Santa Ceia"]
 
     vm.Congregacaos = [{}]
 

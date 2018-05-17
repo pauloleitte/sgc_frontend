@@ -1,8 +1,8 @@
 
-<content-header name= "Membros" small="Cadastro de Membros"> </content-header>
+<content-header name= "Pessoas" small="Cadastro de Pessoas"> </content-header>
 
 <section class="content">
-    <div class="nav-tabs-custom" ng-controller="membroCtrl as cgCtrl">
+    <div class="nav-tabs-custom" ng-controller="pessoaCtrl as cgCtrl">
       <ul class="nav nav-tabs">
 
       <li ng-if="cgCtrl.tabList" ng-class="{active: cgCtrl.tabList}">
@@ -31,13 +31,13 @@
 
       </ul>
       <div class="tab-content">
-        <div class="tab-pane" id="tabList" ng-include="'membro/list.html'"
+        <div class="tab-pane" id="tabList" ng-include="'pessoa/list.html'"
         ng-class="{active: cgCtrl.tabList}" ng-if="cgCtrl.tabList"></div>
-        <div class="tab-pane" id="tabCreate" ng-include="'membro/form.html'"
+        <div class="tab-pane" id="tabCreate" ng-include="'pessoa/form.html'"
         ng-if="cgCtrl.tabCreate"></div>
-        <div class="tab-pane" id="tabUpdate" ng-include="'membro/form.html'"
+        <div class="tab-pane" id="tabUpdate" ng-include="'pessoa/form.html'"
         ng-class="{active: cgCtrl.tabUpdate}" ng-if="cgCtrl.tabUpdate"></div>
-        <div class="tab-pane" id="tabDelete" ng-include="'membro/form.html'"
+        <div class="tab-pane" id="tabDelete" ng-include="'pessoa/form.html'"
         ng-class="{active: cgCtrl.tabDelete}" ng-if="cgCtrl.tabDelete"></div>
       </div>
     </div>

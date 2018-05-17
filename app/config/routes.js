@@ -9,9 +9,9 @@ angular.module('SGC').config([
     }).state('congregacao', {
       url: "/Congregacao?page",
       templateUrl: "congregacao/tabs.html"
-    }).state('membro',{
-      url: "/Membro?page",
-      templateUrl: "membro/tabs.html"
+    }).state('pessoa',{
+      url: "/Pessoa?page",
+      templateUrl: "Pessoa/tabs.html"
     }).state('departamento',{
       url: "/Departamento?page",
       templateUrl: "departamento/tabs.html"

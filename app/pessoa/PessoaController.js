@@ -1,16 +1,16 @@
 (function () {
-  angular.module('SGC').controller('membroCtrl', [
+  angular.module('SGC').controller('pessoaCtrl', [
     '$http',
     '$location',
     'msgs',
     'tabs',
     '$filter',
-    membroController
+    pessoaController
   ])
-  function membroController($http, $location, msgs, tabs, $filter) {
+  function pessoaController($http, $location, msgs, tabs, $filter) {
     const vm = this
-    const url = 'http://localhost:5000/api/membro'
-	const url_heroku = 'https://sgc-backend.herokuapp.com/api/membro'
+    const url = 'http://localhost:4000/api/pessoa'
+	const url_heroku = 'https://sgc-backend.herokuapp.com/api/pessoa'
 
     vm.listaDeSexos = ["Masculino", "Feminino"]
 
@@ -22,8 +22,8 @@
       const page = parseInt($location.search().page) || 1
       const url_pages = `${url_heroku}?skip=${(page - 1) * 10}&limit=10`
       $http.get(url_pages).then(function (response) {
-        vm.Membro = { dizimos: [{}] }
-        vm.Membros = response.data
+        vm.Pessoa = { dizimos: [{}] }
+        vm.Pessoas = response.data
         vm.calculateValues()
         $http.get(`${url_heroku}/count`).then(function (resp) {
           vm.pages = Math.ceil(resp.data.value / 10)
@@ -32,8 +32,8 @@
       })
     }
     vm.create = function () {
-      $http.post(url_heroku, vm.Membro).then(function (response) {
-        vm.Membro = { dizimos: [{}] }
+      $http.post(url_heroku, vm.Pessoa).then(function (response) {
+        vm.Pessoa = { dizimos: [{}] }
         vm.refresh()
         msgs.addSuccess('Operação realizada com sucesso!')
       }).catch(function (response) {
@@ -42,8 +42,8 @@
     }
     vm.update = function () {
       vm.calculateValues()
-      const updateUrl = `${url_heroku}/${vm.Membro._id}`
-      $http.put(updateUrl, vm.Membro).then(function (response) {
+      const updateUrl = `${url_heroku}/${vm.Pessoa._id}`
+      $http.put(updateUrl, vm.Pessoa).then(function (response) {
         vm.refresh()
         msgs.addSuccess('Operação realizada com sucesso')
       }).catch(function (resp) {
@@ -51,56 +51,56 @@
       })
     }
     vm.delete = function () {
-      const deleteUrl = `${url_heroku}/${vm.Membro._id}`
-      $http.delete(deleteUrl, vm.Membro).then(function (response) {
+      const deleteUrl = `${url_heroku}/${vm.Pessoa._id}`
+      $http.delete(deleteUrl, vm.Pessoa).then(function (response) {
         vm.refresh()
         msgs.addSuccess('Operação realizada com sucesso!')
       }).catch(function (resp) {
         msgs.addError(resp.data)
       })
     }
-    vm.showTabUpdate = function (Membro) {
-      vm.Membro = Membro
+    vm.showTabUpdate = function (Pessoa) {
+      vm.Pessoa = Pessoa
       vm.calculateValues()
       tabs.show(vm, { tabUpdate: true })
     }
-    vm.showTabDelete = function (Membro) {
-      vm.Membro = Membro
+    vm.showTabDelete = function (Pessoa) {
+      vm.Pessoa = Pessoa
       vm.calculateValues()
       tabs.show(vm, { tabDelete: true })
     }
     var initDizimos = function () {
 
-      if (!vm.Membro.dizimos || !vm.Membro.dizimos.length) {
-        vm.Membro.dizimos = []
-        vm.Membro.dizimos.push({})
+      if (!vm.Pessoa.dizimos || !vm.Pessoa.dizimos.length) {
+        vm.Pessoa.dizimos = []
+        vm.Pessoa.dizimos.push({})
       }
 
       vm.calculateValues()
     }
     vm.addDizimo = function (index) {
-      vm.Membro.dizimos.splice(index + 1, 0, { valor: null, data_pagamento: null })
+      vm.Pessoa.dizimos.splice(index + 1, 0, { valor: null, data_pagamento: null })
     }
     vm.cloneDizimo = function (index, { valor, data_pagamento, }) {
-      vm.Membro.dizimos.splice(index + 1, 0, { valor, data_pagamento })
+      vm.Pessoa.dizimos.splice(index + 1, 0, { valor, data_pagamento })
       initDizimos()
     }
     vm.deleteDizimo = function (index) {
-      if (vm.Membro.dizimos.length > 1) {
-        vm.Membro.dizimos.splice(index, 1)
+      if (vm.Pessoa.dizimos.length > 1) {
+        vm.Pessoa.dizimos.splice(index, 1)
         initDizimos()
       }
 
     }
     vm.cancel = function () {
       tabs.show(vm, { tabList: true, tabCreate: true })
-      vm.Membro = {}
+      vm.Pessoa = {}
       initDizimos()
     }
     vm.calculateValues = function () {
       vm.dizimo = 0
-      if (vm.Membro) {
-        vm.Membro.dizimos.forEach(function ({ valor }) {
+      if (vm.Pessoa) {
+        vm.Pessoa.dizimos.forEach(function ({ valor }) {
           vm.dizimo += !valor || isNaN(valor) ? 0 : parseFloat(valor)
         })
       }
@@ -117,21 +117,20 @@
 
         if (!("erro" in response.data)) {
           //vm.Membro.cep = response.data.cep
-          vm.Membro.rua = response.data.logradouro
-          vm.Membro.bairro = response.data.bairro
-          vm.Membro.estado = response.data.uf
-          vm.Membro.cidade = response.data.localidade
+          vm.Pessoa.rua = response.data.logradouro
+          vm.Pessoa.bairro = response.data.bairro
+          vm.Pessoa.estado = response.data.uf
+          vm.Pessoa.cidade = response.data.localidade
 
         } //end if.
         else {
           //CEP pesquisado não foi encontrado.
           msgs.addError("CEP não foi encontrado!")
-          vm.Membro = {}
         }
 
       }).catch(function (response) {
         msgs.addError(response.data.error)
-        vm.Membro = {}
+        vm.Pessoa = {}
       })
     }
     vm.refresh()

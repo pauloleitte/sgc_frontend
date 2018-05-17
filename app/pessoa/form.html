@@ -1,6 +1,6 @@
 <div class="box box-info">
   <div class = "box-header with-border">
-<h3 class= "box-title">Dados Membro</h3>
+<h3 class= "box-title">Dados Pessoa</h3>
 <div class="box-tool pull-right">
   <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
     <i class="fa fa-minus"></i>
@@ -15,7 +15,7 @@
             <i class= "fa fa-user"></i>
           </div>
           <input class="form-control" placeholder="Informe o Nome"
-             type="text" ng-model=cgCtrl.Membro.nome ng-readonly="cgCtrl.tabDelete"/>
+             type="text" ng-model=cgCtrl.Pessoa.nome ng-readonly="cgCtrl.tabDelete"/>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
             <i class= "fa fa-envelope"></i>
           </div>
           <input class="form-control" placeholder="Informe o Email"
-             type="text" ng-model=cgCtrl.Membro.email ng-readonly="cgCtrl.tabDelete"/>
+             type="text" ng-model=cgCtrl.Pessoa.email ng-readonly="cgCtrl.tabDelete"/>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
             <i class= "fa fa-phone"></i>
           </div>
           <input class="form-control" placeholder="Informe o telefone" mask="(99) 9?9999-9999"
-              type="text" ng-model=cgCtrl.Membro.telefone ng-readonly="cgCtrl.tabDelete" />
+              type="text" ng-model=cgCtrl.Pessoa.telefone ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
             <i class= "fa fa-venus-mars"></i>
           </div>
           <select class="form-control" data-toggle="tooltip"
-          data-original-title="Informe o Sexo" ng-model="cgCtrl.Membro.sexo" ng-disabled="cgCtrl.tabDelete"  ng-options="sexo for sexo in cgCtrl.listaDeSexos" >
+          data-original-title="Informe o Sexo" ng-model="cgCtrl.Pessoa.sexo" ng-disabled="cgCtrl.tabDelete"  ng-options="sexo for sexo in cgCtrl.listaDeSexos" >
           </select>
         </div>
       </div>
@@ -64,7 +64,7 @@
             <i class= "fa fa-group"></i>
           </div>
         <select class="form-control" data-toggle="tooltip"
-          data-original-title="Informe o Estado Civil" ng-model="cgCtrl.Membro.estado_civil"  ng-options="civil for civil in cgCtrl.listaDeEstadoCivis"
+          data-original-title="Informe o Estado Civil" ng-model="cgCtrl.Pessoa.estado_civil"  ng-options="civil for civil in cgCtrl.listaDeEstadoCivis"
           ng-disabled="cgCtrl.tabDelete">
           </select>
         </div>
@@ -78,7 +78,7 @@
             <i class= "fa fa-wrench"></i>
           </div>
           <select class="form-control" data-toggle="tooltip"
-          data-original-title="Informe o Cargo" ng-model="cgCtrl.Membro.tipo" ng-options="tipo for tipo in cgCtrl.listaDeTipos"
+          data-original-title="Informe o Cargo" ng-model="cgCtrl.Pessoa.tipo" ng-options="tipo for tipo in cgCtrl.listaDeTipos"
           ng-disabled="cgCtrl.tabDelete">
           </select>
         </div>
@@ -92,7 +92,7 @@
             <i class="fa fa-calendar"></i>
             </div>
             <input class="form-control pull-right" placeholder="Informe a Data de Nascimento" mask="99/99/9999"
-            type="text" ng-model=cgCtrl.Membro.dataNascimento ng-readonly="cgCtrl.tabDelete"/>
+            type="text" ng-model=cgCtrl.Pessoa.dataNascimento ng-readonly="cgCtrl.tabDelete"/>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@
                     <i class= "fa fa-street-view"></i>
                   </div>
                   <input id="cep" class="form-control" placeholder="Informe o CEP" mask="99999-999"
-                   type="text" ng-model=cgCtrl.Membro.cep ng-readonly="cgCtrl.tabDelete" ng-blur="cgCtrl.getCep(cgCtrl.Membro.cep)"/>
+                   type="text" ng-model=cgCtrl.Pessoa.cep ng-readonly="cgCtrl.tabDelete" ng-blur="cgCtrl.getCep(cgCtrl.Pessoa.cep)"/>
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@
                     <i class= "fa fa-road"></i>
                   </div>
                   <input id="rua" class="form-control" placeholder="Informe a Rua"
-                     type="text" ng-model=cgCtrl.Membro.rua ng-readonly="cgCtrl.tabDelete"/>
+                     type="text" ng-model=cgCtrl.Pessoa.rua ng-readonly="cgCtrl.tabDelete"/>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
                     <i class= "fa fa-sheqel"></i>
                   </div>
                   <input id="numero" class="form-control" placeholder="Informe o número"
-                     type="text" ng-model=cgCtrl.Membro.numero ng-readonly="cgCtrl.tabDelete"/>
+                     type="text" ng-model=cgCtrl.Pessoa.numero ng-readonly="cgCtrl.tabDelete"/>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@
                     <i class= "fa fa-sheqel"></i>
                   </div>
                   <input id="complemento" class="form-control" placeholder="Informe o complemento"
-                     type="text" ng-model=cgCtrl.Membro.complemento ng-readonly="cgCtrl.tabDelete"/>
+                     type="text" ng-model=cgCtrl.Pessoa.complemento ng-readonly="cgCtrl.tabDelete"/>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@
                     <i class= "fa fa-th-large"></i>
                   </div>
                   <input id="bairro" class="form-control" placeholder="Informe o bairro"
-                     type="text" ng-model=cgCtrl.Membro.bairro ng-readonly="cgCtrl.tabDelete"/>
+                     type="text" ng-model=cgCtrl.Pessoa.bairro ng-readonly="cgCtrl.tabDelete"/>
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@
                 <i class= "fa fa-map-o"></i>
               </div>
               <input id="cidade" class="form-control" placeholder="Informe a cidade"
-                 type="text" ng-model=cgCtrl.Membro.cidade ng-readonly="cgCtrl.tabDelete"/>
+                 type="text" ng-model=cgCtrl.Pessoa.cidade ng-readonly="cgCtrl.tabDelete"/>
             </div>
           </div>
         </div>
@@ -193,7 +193,7 @@
                 <i class= "fa fa-map-o"></i>
               </div>
               <input id="estado" class="form-control" placeholder="Informe o estado"
-                 type="text" ng-model=cgCtrl.Membro.estado ng-readonly="cgCtrl.tabDelete"/>
+                 type="text" ng-model=cgCtrl.Pessoa.estado ng-readonly="cgCtrl.tabDelete"/>
             </div>
           </div>
         </div>
@@ -213,7 +213,7 @@
     <div class ="box-body">
          <div class="col-xs-12">
       <fieldset>
-        <div ng-include="'membro/totalDizimos.html'"></div>
+        <div ng-include="'pessoa/totalDizimos.html'"></div>
       </fieldset>
     </div>
     </div> 
@@ -232,7 +232,7 @@
      <div class="box-body">
      <div class="col-xs-12">
       <fieldset>
-        <div ng-include="'membro/dizimosList.html'"></div>
+        <div ng-include="'pessoa/dizimosList.html'"></div>
       </fieldset>
     </div>
      </div>
