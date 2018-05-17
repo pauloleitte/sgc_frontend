@@ -11,7 +11,7 @@ angular.module('SGC').config([
       templateUrl: "congregacao/tabs.html"
     }).state('pessoa',{
       url: "/Pessoa?page",
-      templateUrl: "Pessoa/tabs.html"
+      templateUrl: "pessoa/tabs.html"
     }).state('departamento',{
       url: "/Departamento?page",
       templateUrl: "departamento/tabs.html"
