@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html ng-app = "SGC">
-  <head>
-    <meta charset="utf-8">
-    <title>SGC</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, userscalable=no"name="viewport">
-	  <script src="/assets/js/deps.min.js"></script>
-    <script src="/assets/js/app.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/deps.min.css">
-    <link rel="stylesheet" href="/assets/css/app.min.css">
-  </head>
-  <body class="skin-blue fixed sidebar-mini">
-    <div class="wrapper">
-      <header class="main-header" ng-include="'/template/header.html'"></header>
-      <aside class="main-sidebar" ng-include="'/template/menu.html'"></aside>
-      <div class="content-wrapper" ui-view></div>
-      <footer class="main-footer" ng-include = "'/template/footer.html'" ></footer>
-    </div>
-  </body>
+<html lang="pt-br" data-ng-app="SGC">
+
+<head>
+  <title>SGC</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, userscalable=no" name="viewport">
+  <script src="/assets/js/deps.min.js"></script>
+  <script src="/assets/js/app.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/deps.min.css">
+  <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+
+<body class="skin-blue fixed sidebar-mini">
+  <div class="wrapper">
+    <header class="main-header" data-ng-include="'/template/header.html'"></header>
+    <aside class="main-sidebar" data-ng-include="'/template/menu.html'"></aside>
+    <div class="content-wrapper" data-ui-view></div>
+    <footer class="main-footer" data-ng-include="'/template/footer.html'"></footer>
+  </div>
+</body>
+
 </html>
