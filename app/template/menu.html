@@ -1,26 +1,55 @@
+
+<aside class="main-sidebar">
 <section class="sidebar">
-	<ul class="sidebar-menu">
+	<ul class="sidebar-menu" data-widget="tree">
 		<li class="header">Menu Principal</li>
-		<li>
+		<li class="active treeview menu-open">
 			<a ui-sref="dashboard">
-				<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+				<i class="fa fa-dashboard"></i>
+				<span>Dashboard</span>
 			</a>
 		</li>
-
 		<li class="treeview">
-		   <a href>
-		        <i class="fa fa-edit"></i> <span>Cadastros</span>
-		        <i class="fa fa-angle-left pull-right"></i>
-
-		  </a>
-		  <ul class="treeview-menu">
-		    <li>
-					<a ui-sref="congregacao"><i class="fa fa-institution"></i>Congregação</a>
-					<a ui-sref="departamento"><i class="fa fa-users"></i>Departamento</a>
-					<a ui-sref="evento"><i class="fa fa-calendar-plus-o"></i>Evento</a>
-					<a ui-sref="pessoa"><i class="fa fa-user"></i>Pessoa</a>
-		    </li>
-		  </ul>
+			<a href>
+				<i class="fa fa-edit"></i>
+				<span>Cadastros</span>
+				<i class="fa fa-angle-left pull-right"></i>
+			</a>
+			<ul class="treeview-menu">
+				<li>
+					<a ui-sref="congregacao">
+						<i class="fa fa-institution"></i>Congregação</a>
+					<a ui-sref="departamento">
+						<i class="fa fa-users"></i>Departamento</a>
+					<a ui-sref="evento">
+						<i class="fa fa-calendar-plus-o"></i>Evento</a>
+					<a ui-sref="pessoa">
+						<i class="fa fa-user"></i>Pessoa</a>
+				</li>
+			</ul>
 		</li>
 	</ul>
 </section>
+</aside>
+
+<!-- <aside class="main-sidebar">
+  <section class="sidebar">
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">MAIN NAVIGATION</li>
+      <li class="active treeview menu-open">
+          <a routerLink="/home">
+            <i class="fa fa-dashboard"></i> <span>Cadastro</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a routerLink="/membro"><i class="fa fa-circle-o"></i>Membro</a></li>
+            <li><a routerLink="/congregacao"><i class="fa fa-circle-o"></i>Congregacao</a></li>
+            <li><a routerLink="/departamento"><i class="fa fa-circle-o"></i>Departamento</a></li>
+          </ul>
+        </li>
+      <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Leia Me</span></a></li>
+    </ul>
+  </section>
+</aside> -->

@@ -14,11 +14,15 @@
       <thead>
         <tr>
           <th>Nome</th>
+          <th>Local</th>
+          <th>Tipo</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="Evento in cgCtrl.Eventos  | filter:{ nome:searchText }">
           <td>{{ Evento.nome }}</td>
+          <td>{{ Evento.local }}</td>
+          <td>{{ Evento.tipo }}</td>
           <td class = "table-actions">
             <button class="btn btn-warning" ng-click="cgCtrl.showTabUpdate(Evento)">
               <i class= "fa fa-pencil"></i></button>
@@ -28,7 +32,8 @@
         </tr>
       </tbody>
     </table>
+    <div class="box-footer clearfix">
+      <paginator url="/#!/Evento" pages="{{ cgCtrl.pages }}"></paginator>
+    </div>
   </div>
-  <div class="box-footer clearfix">
-    <paginator url="/#!/Evento" pages="{{ cgCtrl.pages }}"></paginator>
-  </div>
+ 

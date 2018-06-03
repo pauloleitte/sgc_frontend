@@ -1,169 +1,167 @@
-    <div class="box box-info">
-        <div class = "box-header with-border">
-      <h3 class= "box-title">Dados Cadastrais</h3>
-      <div class="box-tool pull-right">
-        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
-          <i class="fa fa-minus"></i>
-        </button>
-      </div>
-      </div>
-      <div class="box-body">
-      <div class="col-xs-12">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-calendar-plus-o"></i>
-            </div>
-            <input id="nome" class="form-control" placeholder="Informe o Nome"
-               type="text" ng-model=cgCtrl.Evento.nome ng-readonly="cgCtrl.tabDelete"/>
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">Dados Cadastrais</h3>
+    <div class="box-tool pull-right">
+      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+  </div>
+  <div class="box-body">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar-plus-o"></i>
           </div>
+          <input id="nome_evento" class="form-control" placeholder="Informe o Nome" type="text" ng-model=cgCtrl.Evento.nome ng-readonly="cgCtrl.tabDelete"
+          />
         </div>
       </div>
+    </div>
 
-      <div class="col-xs-12">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-institution"></i>
-            </div>
-            <select id= "local_evento" class="form-control"  data-toggle="tooltip" data-original-title="Informe o Local do Evento" ng-model="cgCtrl.Evento.local" ng-disabled="cgCtrl.tabDelete">
-              <option ng-repeat="x in cgCtrl.Congregacaos" value="{{x.nome}}">{{x.nome}}</option>
-              </select>
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-institution"></i>
           </div>
+          <select id="local_evento" class="form-control" ng-model="cgCtrl.Evento.local" ng-disabled="cgCtrl.tabDelete">
+            <option value="">Selecione o local</option>
+            <option ng-repeat="x in cgCtrl.Congregacaos" value="{{x.nome}}">{{x.nome}}</option>
+          </select>
         </div>
       </div>
+    </div>
 
-      <div class="col-xs-12">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-indent"></i>
-            </div>
-            <select id= "tipo" class="form-control" data-toggle="tooltip" ng-disabled="cgCtrl.tabDelete"
-            data-original-title="Informe o Tipo" ng-model="cgCtrl.Evento.tipo" ng-options="tipo for tipo in cgCtrl.listaDeTipos" >
-            </select>
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-indent"></i>
           </div>
+          <select id="tipo" class="form-control" ng-disabled="cgCtrl.tabDelete" ng-model="cgCtrl.Evento.tipo" ng-options="tipo for tipo in cgCtrl.listaDeTipos">
+            <option value="">Selecione o tipo</option>
+          </select>
         </div>
       </div>
+    </div>
 
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-calendar"></i>
-            </div>
-            <input id="dia_inicio_evento" class="form-control" placeholder="Informe o dia de Incio"
-               type="number" ng-model=cgCtrl.Evento.dia_inicio ng-readonly="cgCtrl.tabDelete"/>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
           </div>
+          <input id="dia_inicio_evento" class="form-control" placeholder="Informe o dia de Incio" type="number" ng-model=cgCtrl.Evento.dia_inicio
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-calendar-o"></i>
-            </div>
-            <input id="mes_inicio_evento" class="form-control" placeholder="Informe o Mês de Incio"
-               type="number" ng-model=cgCtrl.Evento.mes_inicio ng-readonly="cgCtrl.tabDelete"/>
+    </div>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar-o"></i>
           </div>
+          <input id="mes_inicio_evento" class="form-control" placeholder="Informe o Mês de Incio" type="number" ng-model=cgCtrl.Evento.mes_inicio
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
+    </div>
 
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-calendar-minus-o"></i>
-            </div>
-            <input id="ano_inicio_evento" class="form-control" placeholder="Informe o ano de Incio"
-               type="number" ng-model=cgCtrl.Evento.ano_inicio ng-readonly="cgCtrl.tabDelete"/>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar-minus-o"></i>
           </div>
+          <input id="ano_inicio_evento" class="form-control" placeholder="Informe o ano de Incio" type="number" ng-model=cgCtrl.Evento.ano_inicio
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
+    </div>
 
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-clock-o"></i>
-            </div>
-            <input id="hora_inicio_evento" class="form-control" placeholder="Informe o horario de Inicio"
-               type="text" ng-model=cgCtrl.Evento.hora_inicio ng-readonly="cgCtrl.tabDelete" mask="99:99"/>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-clock-o"></i>
           </div>
+          <input id="hora_inicio_evento" class="form-control" placeholder="Informe o horario de Inicio" type="text" ng-model=cgCtrl.Evento.hora_inicio
+            ng-readonly="cgCtrl.tabDelete" mask="99:99" />
         </div>
       </div>
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-calendar"></i>
-            </div>
-            <input id="dia_fim_evento" class="form-control" placeholder="Informe o Dia de Fim"
-               type="number" ng-model=cgCtrl.Evento.dia_fim ng-readonly="cgCtrl.tabDelete"/>
+    </div>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
           </div>
+          <input id="dia_fim_evento" class="form-control" placeholder="Informe o Dia de Fim" type="number" ng-model=cgCtrl.Evento.dia_fim
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-calendar-o"></i>
-            </div>
-            <input id="mes_fim_evento" class="form-control" placeholder="Informe o Mes de Fim"
-               type="number" ng-model=cgCtrl.Evento.mes_fim ng-readonly="cgCtrl.tabDelete"/>
+    </div>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar-o"></i>
           </div>
+          <input id="mes_fim_evento" class="form-control" placeholder="Informe o Mes de Fim" type="number" ng-model=cgCtrl.Evento.mes_fim
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
+    </div>
 
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-calendar-minus-o"></i>
-            </div>
-            <input id="ano_fim_evento" class="form-control" placeholder="Informe o Ano de Fim"
-               type="number" ng-model=cgCtrl.Evento.ano_fim ng-readonly="cgCtrl.tabDelete"/>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar-minus-o"></i>
           </div>
+          <input id="ano_fim_evento" class="form-control" placeholder="Informe o Ano de Fim" type="number" ng-model=cgCtrl.Evento.ano_fim
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
+    </div>
 
-      <div class="col-xs-3">
-        <div class="form-group">
-          <div class = "input-group">
-            <div class="input-group-addon">
-              <i class= "fa fa-clock-o"></i>
-            </div>
-            <input id="hora_fim_evento" class="form-control" placeholder="Informe o Horario de Fim"
-               type="text" ng-model=cgCtrl.Evento.hora_fim ng-readonly="cgCtrl.tabDelete" mask="99:99"/>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-clock-o"></i>
           </div>
+          <input id="hora_fim_evento" class="form-control" placeholder="Informe o Horario de Fim" type="text" ng-model=cgCtrl.Evento.hora_fim
+            ng-readonly="cgCtrl.tabDelete" mask="99:99" />
         </div>
-      </div>      
-</div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="box box-info">
-  <div class = "box-header with-border">
-<h3 class= "box-title">Lista de Partipantes</h3>
-<div class="box-tool pull-right">
-  <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
-    <i class="fa fa-minus"></i>
-  </button>
-</div>
-</div>
- <div class="box-body">
- <div class="col-xs-12">
-  <fieldset>
-    <div ng-include="'evento/participantesList.html'"></div>
-  </fieldset>
-</div>
- </div>
+  <div class="box-header with-border">
+    <h3 class="box-title">Lista de Partipantes</h3>
+    <div class="box-tool pull-right">
+      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+  </div>
+  <div class="box-body">
+    <div class="col-xs-12">
+      <fieldset>
+        <div ng-include="'evento/participantesList.html'"></div>
+      </fieldset>
+    </div>
+  </div>
 </div>
 
 <div class="box-footer">
-    <button class = "btn btn-primary" ng-click="cgCtrl.create()"
-    ng-if="cgCtrl.tabCreate">Incluir</button>
-    <button class = "btn btn-info"
-    ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
-    <button class = "btn btn-danger"
-    ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
-    <button class = "btn btn-dafault" ng-click="cgCtrl.refresh()">Cancelar</button>
-  </div>
+  <button class="btn btn-primary" ng-click="cgCtrl.create()" ng-if="cgCtrl.tabCreate">Incluir</button>
+  <button class="btn btn-info" ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
+  <button class="btn btn-danger" ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
+  <button class="btn btn-dafault" ng-click="cgCtrl.refresh()">Cancelar</button>
+</div>

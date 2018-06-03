@@ -1,59 +1,72 @@
 <div class="box box-info">
-  <div class = "box-header with-border">
-<h3 class= "box-title">Dados Cadastrais</h3>
-<div class="box-tool pull-right">
-  <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
-    <i class="fa fa-minus"></i>
-  </button>
-</div>
-</div>
+  <div class="box-header with-border">
+    <h3 class="box-title">Dados Cadastrais</h3>
+    <div class="box-tool pull-right">
+      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+  </div>
   <div class="box-body">
 
     <div class="col-xs-12">
       <div class="form-group">
-        <div class = "input-group">
+        <div class="input-group">
           <div class="input-group-addon">
-            <i class= "fa fa-user"></i>
+            <i class="fa fa-user"></i>
           </div>
-          <input id="nome" class="form-control" placeholder="Informe o nome"
-             type="text" ng-model=cgCtrl.Congregacao.nome ng-readonly="cgCtrl.tabDelete"/>
+          <input id="nome_congregacao" class="form-control" placeholder="Informe o nome" type="text" ng-model=cgCtrl.Congregacao.nome
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
     </div>
-
 
     <div class="col-xs-12">
       <div class="form-group">
-        <div class = "input-group">
+        <div class="input-group">
           <div class="input-group-addon">
-            <i class= "fa fa-user"></i>
+            <i class="fa fa-user"></i>
           </div>
-          <input id="nome" class="form-control" placeholder="Informe o ministério"
-             type="text" ng-model=cgCtrl.Congregacao.ministerio ng-readonly="cgCtrl.tabDelete"/>
+          <select class="form-control" ng-model=cgCtrl.Congregacao.ministerio ng-disabled="cgCtrl.tabDelete" ng-options="ministerio for ministerio in cgCtrl.listaDeMinisterios">
+            <option value="">Selecione um ministério</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-user"></i>
+          </div>
+          <input id="nome" class="form-control" placeholder="Informe o ministério" type="text" ng-model=cgCtrl.Congregacao.ministerio
+            ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div> -->
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-envelope"></i>
+          </div>
+          <input id="email_congregacao" class="form-control" placeholder="Informe o e-mail" type="text" ng-model=cgCtrl.Congregacao.email
+            ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
     </div>
 
     <div class="col-sm-6">
       <div class="form-group">
-        <div class = "input-group">
+        <div class="input-group">
           <div class="input-group-addon">
-            <i class= "fa fa-envelope"></i>
+            <i class="fa fa-phone"></i>
           </div>
-          <input id="email" class="form-control" placeholder="Informe o e-mail"
-             type="text" ng-model=cgCtrl.Congregacao.email ng-readonly="cgCtrl.tabDelete"/>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="form-group">
-        <div class = "input-group">
-          <div class="input-group-addon">
-            <i class= "fa fa-phone"></i>
-          </div>
-          <input id="telefone" class="form-control" placeholder="Informe o telefone"
-          mask="(99) 9999-9999" type="text" ng-model=cgCtrl.Congregacao.telefone ng-readonly="cgCtrl.tabDelete"/>
+          <input id="telefone_congregacao" class="form-control" placeholder="Informe o telefone" mask="(99) 9999-9999" type="text"
+            ng-model=cgCtrl.Congregacao.telefone ng-readonly="cgCtrl.tabDelete" />
         </div>
       </div>
     </div>
@@ -65,114 +78,111 @@
 
 
 
-    <div class="box box-info">
-      <div class = "box-header with-border">
-    <h3 class= "box-title">Endereço</h3>
-    </div>
-    <div class="box-tool pull-right">
-      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
-        <i class="fa fa-minus"></i>
-      </button>
-    </div>
-      <div class="box-body">
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">Endereço</h3>
+  </div>
+  <div class="box-tool pull-right">
+    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title data-original-title="Minimizar">
+      <i class="fa fa-minus"></i>
+    </button>
+  </div>
+  <div class="box-body">
 
 
 
-            <div class="col-md-4">
-              <div class="form-group">
-                <div class = "input-group">
-                  <div class="input-group-addon">
-                    <i class= "fa fa-street-view"></i>
-                  </div>
-                  <input id="cep" class="form-control" placeholder="Informe o CEP"
-                    mask="99999-999" type="text" ng-model=cgCtrl.Congregacao.cep ng-readonly="cgCtrl.tabDelete" ng-blur="cgCtrl.getCep(cgCtrl.Congregacao.cep)"/>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-12">
-              <div class="form-group">
-                <div class = "input-group">
-                  <div class="input-group-addon">
-                    <i class= "fa fa-road"></i>
-                  </div>
-                  <input id="rua" class="form-control" placeholder="Informe a Rua"
-                     type="text" ng-model=cgCtrl.Congregacao.rua ng-readonly="cgCtrl.tabDelete"/>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="form-group">
-                <div class = "input-group">
-                  <div class="input-group-addon">
-                    <i class= "fa fa-sheqel"></i>
-                  </div>
-                  <input id="numero" class="form-control" placeholder="Informe o número"
-                     type="text" ng-model=cgCtrl.Congregacao.numero ng-readonly="cgCtrl.tabDelete"/>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div class = "input-group">
-                  <div class="input-group-addon">
-                    <i class= "fa fa-sheqel"></i>
-                  </div>
-                  <input id="complemento" class="form-control" placeholder="Informe o complemento"
-                     type="text" ng-model=cgCtrl.Congregacao.complemento ng-readonly="cgCtrl.tabDelete"/>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="form-group">
-                <div class = "input-group">
-                  <div class="input-group-addon">
-                    <i class= "fa fa-th-large"></i>
-                  </div>
-                  <input id="bairro" class="form-control" placeholder="Informe o bairro"
-                     type="text" ng-model=cgCtrl.Congregacao.bairro ng-readonly="cgCtrl.tabDelete"/>
-                </div>
-              </div>
-            </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="form-group">
-            <div class = "input-group">
-              <div class="input-group-addon">
-                <i class= "fa fa-map-o"></i>
-              </div>
-              <input id="cidade" class="form-control" placeholder="Informe a cidade"
-                 type="text" ng-model=cgCtrl.Congregacao.cidade ng-readonly="cgCtrl.tabDelete"/>
-            </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-street-view"></i>
           </div>
+          <input id="cep_congregacao" class="form-control" placeholder="Informe o CEP" mask="99999-999" type="text" ng-model=cgCtrl.Congregacao.cep
+            ng-readonly="cgCtrl.tabDelete" ng-blur="cgCtrl.getCep(cgCtrl.Congregacao.cep)" />
         </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="form-group">
-            <div class = "input-group">
-              <div class="input-group-addon">
-                <i class= "fa fa-map-o"></i>
-              </div>
-              <input id="estado" class="form-control" placeholder="Informe o estado"
-                 type="text" ng-model=cgCtrl.Congregacao.estado ng-readonly="cgCtrl.tabDelete"/>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
 
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-road"></i>
+          </div>
+          <input id="rua_congregacao" class="form-control" placeholder="Informe a Rua" type="text" ng-model=cgCtrl.Congregacao.rua
+            ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-sheqel"></i>
+          </div>
+          <input id="numero_congregacao" class="form-control" placeholder="Informe o número" type="text" ng-model=cgCtrl.Congregacao.numero
+            ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-sheqel"></i>
+          </div>
+          <input id="complemento_congregacao" class="form-control" placeholder="Informe o complemento" type="text" ng-model=cgCtrl.Congregacao.complemento
+            ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-th-large"></i>
+          </div>
+          <input id="bairro_congregacao" class="form-control" placeholder="Informe o bairro" type="text" ng-model=cgCtrl.Congregacao.bairro
+            ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-map-o"></i>
+          </div>
+          <input id="cidade_congregacao" class="form-control" placeholder="Informe a cidade" type="text" ng-model=cgCtrl.Congregacao.cidade
+            ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-map-o"></i>
+          </div>
+          <input id="estado_congregacao" class="form-control" placeholder="Informe o estado" type="text" ng-model=cgCtrl.Congregacao.estado
+            ng-readonly="cgCtrl.tabDelete" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div class="box-footer">
-  <button class = "btn btn-primary" ng-click="cgCtrl.create()"
-  ng-if="cgCtrl.tabCreate">Incluir</button>
-  <button class = "btn btn-info"
-  ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
-  <button class = "btn btn-danger"
-  ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
-  <button class = "btn btn-dafault" ng-click="cgCtrl.refresh()">Cancelar</button>
+  <button class="btn btn-primary" ng-click="cgCtrl.create()" ng-if="cgCtrl.tabCreate">Incluir</button>
+  <button class="btn btn-info" ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
+  <button class="btn btn-danger" ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
+  <button class="btn btn-dafault" ng-click="cgCtrl.refresh()">Cancelar</button>
 </div>

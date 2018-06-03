@@ -9,58 +9,64 @@
     </div>
   </div>
 </div>
-<div class = "col-xs-12">
-    <table class="table">
-   <thead>
-     <tr>
-     </tr>
-   </thead>
-   <tbody>
-     <tr ng-repeat="partipante in cgCtrl.Evento.participantes | filter:{ nome:searchText }">
-       <td>
-         <div class = "col-xs-12"> 
-                <div class = "input-group">
-                   <div class="input-group-addon">
-                     <i class= "fa fa-user"></i>
-                   </div>
-                     <input id="nome_partipante" class="form-control" placeholder="Informe o Nome" 
-                     type="text" ng-model=partipante.nome ng-readonly="cgCtrl.tabDelete"/>
-               </div>
-          </div>
-       </td>
-       <td>
-
-        <div class="col-xs-12">
-          <div class="form-group">
-            <div class = "input-group">
+<div class="col-xs-12">
+  <table class="table">
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="partipante in cgCtrl.Evento.participantes | filter:{ nome:searchText }">
+        <td>
+          <div class="col-xs-12">
+            <div class="input-group">
               <div class="input-group-addon">
-                <i class= "fa fa-venus-mars"></i>
+                <i class="fa fa-user"></i>
               </div>
-              <select id="sexo_partipante" class="form-control" data-toggle="tooltip"
-              data-original-title="Informe o Sexo" ng-model="partipante.sexo" ng-disabled="cgCtrl.tabDelete"  ng-options="sexo for sexo in cgCtrl.listaDeSexos" >
-              </select>
+              <input id="nome_partipante" class="form-control" placeholder="Informe o Nome" type="text" ng-model=partipante.nome ng-readonly="cgCtrl.tabDelete"
+              />
             </div>
           </div>
-        </div> 
-       </td>
-       <td>
-        <div class = "col-xs-12"> 
-            <div class = "input-group">
-               <div class="input-group-addon">
-                 <i class= "fa  fa-calendar"></i>
-               </div>
-                 <input id="idade_partipante" class="form-control" placeholder="Informe a Idade" 
-                 type="number" ng-model=partipante.idade ng-readonly="cgCtrl.tabDelete"/>
-           </div>
-      </div> 
-    </td>
+        </td>
+        <td>
 
-       <td class="table-actions">
-         <button class="btn btn-success" ng-click="cgCtrl.addPartipante($index)" ng-disabled="cgCtrl.tabDelete"><i class="fa fa-plus"></i></button>
-         <button class="btn btn-warning" ng-click="cgCtrl.clonePartipante($index,partipante)"ng-disabled="cgCtrl.tabDelete" ><i class="fa fa-clone"></i></button>
-         <button class="btn btn-danger"  ng-click="cgCtrl.deletePartipante($index)" ng-disabled="cgCtrl.tabDelete"><i class="fa fa-trash-o"></i></button>
-       </td>  
-     </tr>
-   </tbody>
- </table>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-venus-mars"></i>
+                </div>
+                <select id="sexo_partipante" class="form-control" ng-model="partipante.sexo" ng-disabled="cgCtrl.tabDelete" ng-options="sexo for sexo in cgCtrl.listaDeSexos">
+                  <option value="">Selecione o sexo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="col-xs-12">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa  fa-calendar"></i>
+              </div>
+              <input id="idade_partipante" class="form-control" placeholder="Informe a Idade" type="number" ng-model=partipante.idade ng-readonly="cgCtrl.tabDelete"
+              />
+            </div>
+          </div>
+        </td>
+
+        <td class="table-actions">
+          <button class="btn btn-success" ng-click="cgCtrl.addPartipante($index)" ng-disabled="cgCtrl.tabDelete">
+            <i class="fa fa-plus"></i>
+          </button>
+          <button class="btn btn-warning" ng-click="cgCtrl.clonePartipante($index,partipante)" ng-disabled="cgCtrl.tabDelete">
+            <i class="fa fa-clone"></i>
+          </button>
+          <button class="btn btn-danger" ng-click="cgCtrl.deletePartipante($index)" ng-disabled="cgCtrl.tabDelete">
+            <i class="fa fa-trash-o"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

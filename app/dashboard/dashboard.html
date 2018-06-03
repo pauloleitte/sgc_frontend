@@ -1,6 +1,7 @@
 <content-header name="Dashboard" small="Versão 1.0"> </content-header>
 <section class="content" ng-controller="DashboardCtrl as dashboard">
-  <div class="col-xs-12">
+  <value-box grid="12" color-class="bg-green" icon-class="fa fa-dollar" value="R$ {{dashboard.dizimo | number:2}}" text="Total de Dizimos"></value-box>
+  <!-- <div class="col-xs-12">
     <div class="info-box bg-green">
       <span class="info-box-icon">
         <i class="fa fa-dollar"></i>
@@ -16,7 +17,7 @@
         </span>
       </div>
     </div>
-  </div>
+  </div> -->
   <value-box grid="4" color-class="bg-aqua" icon-class="fa fa-institution" value="{{ dashboard.congregacao }}" text="Congregações"></value-box>
   <value-box grid="4" color-class="bg-red" icon-class="fa fa-user" value="{{ dashboard.membro }}" text="Pessoas"></value-box>
   <value-box grid="4" color-class="bg-yellow" icon-class="fa fa-calendar-plus-o" value="{{ dashboard.evento }}" text="Eventos"></value-box>
@@ -43,11 +44,41 @@
           <div class="col-md-4">
             <ul class="chart-legend clearfix">
               <li>
-                <i class="fa fa-circle-o text-red"></i> Madureira</li>
+                <i class="fa fa-circle-o text-red"></i> Belém</li>
               <li>
-                <i class="fa fa-circle-o text-aqua"></i> Belém</li>
+                <i class="fa fa-circle-o text-aqua"></i> Brás</li>
               <li>
-                <i class="fa fa-circle-o text-yellow"></i> Brás</li>
+                <i class="fa fa-circle-o text-yellow"></i> Madureira</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="box box-default">
+      <div class="box-header with-border">
+        <h3 class="box-title">Pessoas</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="chart-responsive">
+              <canvas id="doughnut" class="chart chart-doughnut" chart-data="dashboard.data_pessoa" chart-labels="dashboard.labels_membro" height="202"
+                width="303" style="width: 243px; height: 162px;" chart-colors="dashboard.colors"></canvas>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <ul class="chart-legend clearfix">
+              <li>
+                <i class="fa fa-circle-o text-red"></i> Membros</li>
+              <li>
+                <i class="fa fa-circle-o text-aqua"></i> Visitantes</li>
             </ul>
           </div>
         </div>
@@ -80,36 +111,6 @@
                     <i class="fa fa-circle-o text-aqua"></i> Culto</li>
                   <li>
                     <i class="fa fa-circle-o text-yellow"></i> Oração</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box box-default">
-          <div class="box-header with-border">
-            <h3 class="box-title">Pessoas</h3>
-            <div class="box-tools pull-right">
-              <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                <i class="fa fa-minus"></i>
-              </button>
-            </div>
-          </div>
-          <div class="box-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="chart-responsive">
-                  <canvas id="doughnut" class="chart chart-doughnut" chart-data="dashboard.data_pessoa" chart-labels="dashboard.labels_membro" height="202"
-                    width="303" style="width: 243px; height: 162px;" chart-colors="dashboard.colors"></canvas>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <ul class="chart-legend clearfix">
-                  <li>
-                    <i class="fa fa-circle-o text-red"></i> Visitante</li>
-                  <li>
-                    <i class="fa fa-circle-o text-aqua"></i> Membros</li>
                 </ul>
               </div>
             </div>
